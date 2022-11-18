@@ -27,10 +27,10 @@ states_lst = ['Karnataka', 'Delhi', 'Maharashtra']
 
 # To connect to the database here the local Database on my computer
 my = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='',
-    database='linkedin'
+    host='THE HOST ADDRESS OF UR DATABASE IF local storage then LOCALHOST',
+    user='YOUR DATABASE USERNAME',
+    password='YOUR DATABASE/SERVER PASSWORD',
+    database='YOUR DATABASE NAME'
 )
 
 # To acces different tables and execute the functions of adding the data into table
@@ -195,53 +195,6 @@ def Open_Browser(titleL):       # Linkedin Page Scraping
             driver.get('{}about'.format(company[y]))
             sleep(2)
 
-            # try:  # Searching For the About Button And Opening The About Page of The Respective Company
-            #     aboutBtn = driver.find_element(
-            #         By.XPATH, '/html/body/div[5]/div[3]/div/div[2]/div/div[2]/main/div[2]/div/div[1]/section/footer')
-            #     aboutBtn.click()
-            # except:
-            #     try:
-            #         c_name = driver.find_element(By.XPATH, '/html/body/div[4]/div[3]/div/div[2]/div/div[2]/main/div[1]/section/div/div[2]/div[1]/div[1]/div[2]/div/h1/span').text
-            #         About_dict['Name'] = c_name
-            #     except:
-            #         About_dict['Name'] = 'None'
-                
-            #     try:
-            #         # Searching for the description box
-            #         detail_box = driver.find_element(
-            #             By.XPATH, '/html/body/div[5]/div[3]/div/div[2]/div/div[2]/main/div[2]/div/div/div[1]/section/p').text
-            #         About_dict['description'] = detail_box
-            #     except:
-            #         About_dict['description'] = "None"
-            #     sleep(2)
-
-            #     # Searching For the Number Of Employees Currently Working for them and Adding it To the Dictionary
-            #     try:
-            #         Employee_box = driver.find_element(
-            #             By.XPATH, '/html/body/div[5]/div[3]/div/div[2]/div/div[2]/main/div[2]/div/div/div[1]/section/dl/dd[3]').text
-            #         # print(Employee_box)
-            #         About_dict['no Employees'] = Employee_box
-            #     except:
-            #         About_dict['no Employees'] = "None"
-            #     sleep(2)
-
-            #     try:  # Searching for the Comapny Headquater Location And Adding it to the Dictionary
-            #         Comp_Location = driver.find_element(
-            #             By.XPATH, '/html/body/div[5]/div[3]/div/div[2]/div/div[2]/main/div[2]/div/div/div[1]/section/dl/dd[5]').text
-            #         # print(Comp_Location)
-            #         About_dict["headquater"] = Comp_Location
-            #     except:
-            #         About_dict['headquater'] = "None"
-                
-            #     # category of the job
-            #         About_dict['category'] = titleL[i]
-            #     sleep(2)
-
-            #     print(f'The Company Details --->{About_dict}')
-            #     continue
-            #     # sleep(3)
-            # sleep(2)
-
             try:
                     c_name = driver.find_element(By.TAG_NAME, 'h1').text
                     print(c_name)
@@ -299,5 +252,4 @@ def Open_Browser(titleL):       # Linkedin Page Scraping
 
 
 Open()
-# login()
 sleep(2)
